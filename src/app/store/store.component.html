@@ -1,7 +1,17 @@
 <section>
 	<h3>Store</h3>
 	<ul class="item-container">
+<<<<<<< HEAD
 		<li (click)="buyCursor()">cursor</li>
 		<li>babka</li>
+=======
+		<li *ngFor="let item of items">
+			<app-action-item
+				[name]="item.name"
+				[limit]="item.limit"
+				[clickCounter]="clickCounter">
+			</app-action-item>
+		</li>
+>>>>>>> b1b53abf88275ac76faaa8bf4bddef233b5382fa
 	</ul>
 </section>

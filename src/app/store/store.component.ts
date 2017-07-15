@@ -3,6 +3,7 @@ import { ClickService } from '../services/click.service';
 
 @Component({
   selector: 'app-store',
+  inputs: ['clickCounter'],
   templateUrl: './store.component.html',
   styleUrls: ['./store.component.css']
 })
