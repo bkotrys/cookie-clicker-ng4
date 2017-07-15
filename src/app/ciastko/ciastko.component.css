@@ -1,0 +1,10 @@
+.btn-lg {
+    padding: 76px 56px;
+    border-radius: 50%;
+    outline: none;
+}
+
+.btn-lg:active,
+.btn-lg:focus {
+    outline:0;
+}
