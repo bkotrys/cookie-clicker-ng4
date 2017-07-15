@@ -50,8 +50,9 @@ export class ClickService  {
         return this._seconds.map((sec: number) => {
             const minutes = Math.floor(sec / 60);
             const seconds = sec % 60;
+            const secStr = `0${seconds}`.slice(-2);
 
-            return `${minutes}:${seconds}`;
+            return `${minutes}:${secStr}`;
         });
     }
 

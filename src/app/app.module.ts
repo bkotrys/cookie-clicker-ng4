@@ -12,6 +12,8 @@ import { CiastkoComponent } from './ciastko/ciastko.component';
 import { ActionItemComponent } from './store/action-item/action-item.component';
 import { CookieContainerComponent } from './cookie-container/cookie-container.component';
 import { CoockieContainerStatsComponent } from './coockie-container-stats/coockie-container-stats.component';
+import { AchievementsService } from './stats/achievements/achievements.service';
+import { AchievementsComponent } from './stats/achievements/achievements.component';
 
 @NgModule({
   declarations: [
@@ -24,11 +26,15 @@ import { CoockieContainerStatsComponent } from './coockie-container-stats/coocki
     CookieContainerComponent,
     CoockieContainerStatsComponent
   ],
+    AchievementsComponent,
+    CoockieContainerStatsComponent,    
+    ActionItemComponent
+  ],
   imports: [
     BrowserModule,
     ButtonsModule.forRoot()
   ],
-  providers: [ClickService],
+  providers: [ClickService, AchievementsService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
