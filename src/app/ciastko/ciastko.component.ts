@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-ciastko',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CiastkoComponent implements OnInit {
 
+  @Output() coockieClicked = new EventEmitter<any>();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onCookieClick(){
+      this.coockieClicked.next({ clicked: true });
   }
 
 }
