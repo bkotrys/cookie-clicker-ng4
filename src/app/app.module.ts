@@ -4,23 +4,26 @@ import { NgModule } from '@angular/core';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 
 import { AppComponent } from './app.component';
+import { StatsComponent } from './stats.component';
+import { ClickService } from './click.service';
 import { StoreComponent } from './store/store.component';
 import { BoardComponent } from './board/board.component';
 import { CiastkoComponent } from './ciastko/ciastko.component';
 
 @NgModule({
-    declarations: [
+  declarations: [
         AppComponent,
+    StatsComponent
         CiastkoComponent,
         StoreComponent,
         BoardComponent,
-    ],
-    imports: [
+  ],
+  imports: [
         BrowserModule,
         ButtonsModule.forRoot()
-    ],
-    providers: [],
-    bootstrap: [AppComponent]
+  ],
+  providers: [ClickService],
+  bootstrap: [AppComponent]
 })
 export class AppModule {
 }
