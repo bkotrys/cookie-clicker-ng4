@@ -13,14 +13,14 @@ import { CiastkoComponent } from './ciastko/ciastko.component';
 @NgModule({
   declarations: [
     AppComponent,
-    StatsComponent
-        CiastkoComponent,
-        StoreComponent,
-        BoardComponent,
+    StatsComponent,
+    CiastkoComponent,
+    StoreComponent,
+    BoardComponent,
   ],
   imports: [
-        BrowserModule,
-        ButtonsModule.forRoot()
+    BrowserModule,
+    ButtonsModule.forRoot()
   ],
   providers: [ClickService],
   bootstrap: [AppComponent]
