@@ -3,11 +3,15 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { StoreComponent } from './store/store.component';
+import { BoardComponent } from './board/board.component';
+import { CiastkoComponent } from './ciastko/ciastko.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    StoreComponent
+    StoreComponent,
+    BoardComponent,
+    CiastkoComponent
   ],
   imports: [
     BrowserModule
