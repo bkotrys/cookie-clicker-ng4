@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-action-item',
@@ -9,6 +9,13 @@ import { Component, OnInit } from '@angular/core';
 export class ActionItemComponent implements OnInit {
 	public limit: number = 0;
 	public name: string; 
-	public clickCounter: number;
-	ngOnInit() {}
+  public clickCounter: number;
+  
+  @Output() public onBuy: EventEmitter<string> = new EventEmitter<string>();
+
+  ngOnInit() {}
+  
+  click() {
+    this.onBuy.next(this.name);
+  }
 }

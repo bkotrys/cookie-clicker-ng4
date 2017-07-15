@@ -9,8 +9,8 @@ import { ClickService } from '../services/click.service';
 })
 export class StoreComponent implements OnInit {
   public items = [
-  	{ name: "cursor" },
-  	{ name: "grandma" }
+  	{ name: "cursor", price: 10 },
+  	{ name: "grandma", price: 30 }
   ]
   
   private canBuyNewClicker: boolean = false;
@@ -24,10 +24,10 @@ export class StoreComponent implements OnInit {
   ngOnInit() {
   }
 
-  buyCursor() {
+  buy($event) {
     if(this.canBuyNewClicker) {
-      this.service.buyClicker();
-    }    
+      const price = this.items.find(i => i.name === $event).price;
+      this.service.buyFor(price);
+    }
   }
-
 }

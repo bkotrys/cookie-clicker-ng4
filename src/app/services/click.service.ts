@@ -16,8 +16,8 @@ export class ClickService  {
         this._clicks.next(1);
     }
 
-    public buyClicker(): void {
-        this._clicks.next(-10);
+    public buyFor(price: number): void {
+        this._clicks.next(-price);
     }
 
     public get Clicks(): Observable<number> {
