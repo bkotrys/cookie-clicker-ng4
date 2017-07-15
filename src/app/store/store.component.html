@@ -4,7 +4,7 @@
 		<li *ngFor="let item of items">
 			<app-action-item
 				[name]="item.name"
-				[limit]="item.limit"
+				[price]="item.price"
 				[clickCounter]="clickCounter"
 				(onBuy)="buy($event)">
 			</app-action-item>

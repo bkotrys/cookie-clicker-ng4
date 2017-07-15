@@ -4,14 +4,14 @@ import { NgModule } from '@angular/core';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 
 import { AppComponent } from './app.component';
-import { CookieContainerComponent } from './cookie-container/cookie-container.component';
+import { StatsComponent } from './stats/stats.component';
 import { ClickService } from './services/click.service';
 import { StoreComponent } from './store/store.component';
 import { BoardComponent } from './board/board.component';
 import { CiastkoComponent } from './ciastko/ciastko.component';
-import { StatsComponent } from './stats/stats.component';
-import { CoockieContainerStatsComponent } from './coockie-container-stats/coockie-container-stats.component';
 import { ActionItemComponent } from './store/action-item/action-item.component';
+import { CookieContainerComponent } from './cookie-container/cookie-container.component';
+import { CoockieContainerStatsComponent } from './coockie-container-stats/coockie-container-stats.component';
 import { AchievementsService } from './stats/achievements/achievements.service';
 import { AchievementsComponent } from './stats/achievements/achievements.component';
 
@@ -20,12 +20,16 @@ import { AchievementsComponent } from './stats/achievements/achievements.compone
     AppComponent,
     StatsComponent,
     CiastkoComponent,
-    CookieContainerComponent,
     StoreComponent,
     BoardComponent,
+    ActionItemComponent,
+    CookieContainerComponent,
+    CoockieContainerStatsComponent
+  ],
     AchievementsComponent,
     CoockieContainerStatsComponent,    
-    ActionItemComponent,  ],
+    ActionItemComponent
+  ],
   imports: [
     BrowserModule,
     ButtonsModule.forRoot()
