@@ -11,6 +11,7 @@ import { BoardComponent } from './board/board.component';
 import { CiastkoComponent } from './ciastko/ciastko.component';
 import { StatsComponent } from './stats/stats.component';
 import { CoockieContainerStatsComponent } from './coockie-container-stats/coockie-container-stats.component';
+import { ActionItemComponent } from './store/action-item/action-item.component';
 
 @NgModule({
   declarations: [
@@ -20,8 +21,7 @@ import { CoockieContainerStatsComponent } from './coockie-container-stats/coocki
     CookieContainerComponent,
     StoreComponent,
     BoardComponent,
-    CoockieContainerStatsComponent,
-  ],
+    CoockieContainerStatsComponent,    ActionItemComponent,  ],
   imports: [
     BrowserModule,
     ButtonsModule.forRoot()

@@ -1,7 +1,12 @@
 <section>
 	<h3>Store</h3>
 	<ul class="item-container">
-		<li>cursor</li>
-		<li>babka</li>
+		<li *ngFor="let item of items">
+			<app-action-item
+				[name]="item.name"
+				[limit]="item.limit"
+				[clickCounter]="clickCounter">
+			</app-action-item>
+		</li>
 	</ul>
 </section>
