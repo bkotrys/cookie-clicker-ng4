@@ -1,18 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
+
 import { AppComponent } from './app.component';
 import { CiastkoComponent } from './ciastko/ciastko.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    CiastkoComponent
-  ],
-  imports: [
-    BrowserModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        CiastkoComponent
+    ],
+    imports: [
+        BrowserModule,
+        ButtonsModule.forRoot()
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
