@@ -10,6 +10,7 @@ import { StoreComponent } from './store/store.component';
 import { BoardComponent } from './board/board.component';
 import { CiastkoComponent } from './ciastko/ciastko.component';
 import { StatsComponent } from './stats/stats.component';
+import { CoockieContainerStatsComponent } from './coockie-container-stats/coockie-container-stats.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { StatsComponent } from './stats/stats.component';
     CookieContainerComponent,
     StoreComponent,
     BoardComponent,
+    CoockieContainerStatsComponent,
   ],
   imports: [
     BrowserModule,

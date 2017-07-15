@@ -8,14 +8,24 @@ import { ClickService}  from '../services/click.service';
 })
 export class CookieContainerComponent implements OnInit {
 
-  constructor(private _cliskService: ClickService) { }
+  coockieCounter: number;
+  
+
+  constructor(private _cliskService: ClickService) { 
+      this.subscribeToClickService();
+  }
 
   ngOnInit() {
       
   }
 
+  subscribeToClickService(){
+      this._cliskService.ClickedNumber.subscribe((res) => {
+          this.coockieCounter = res;
+      })
+  }
+
   sentCookieClickedEvent(event: object){
-    debugger;
       this._cliskService.registerClick();
   }
 
