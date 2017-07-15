@@ -24,6 +24,13 @@ export class ClickService  {
         return this._allClicks;
     }
 
+    public get ClicksPerSecond(): Observable<number> {
+        const totalDelayed = this.ClickedNumber.delay(1000).startWith(0);
+        return Observable.combineLatest(this.ClickedNumber, totalDelayed, (t, td) => {
+            return t - td;
+        });
+    }
+
     public get PlayingSeconds(): Observable<number> {
         return this._seconds;
     }
