@@ -92,6 +92,6 @@ export interface Achievement {
     } 
 }
 
-export enum BonusType {
+enum BonusType {
     CURSOR, GRANDMA, COOKIES
 }
