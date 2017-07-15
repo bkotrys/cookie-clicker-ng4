@@ -5,7 +5,8 @@
 			<app-action-item
 				[name]="item.name"
 				[limit]="item.limit"
-				[clickCounter]="clickCounter">
+				[clickCounter]="clickCounter"
+				(onBuy)="buy($event)">
 			</app-action-item>
 		</li>
 	</ul>

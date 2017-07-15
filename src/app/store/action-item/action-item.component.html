@@ -1,4 +1,4 @@
-<button class="action-item" [disabled]="limit < clickCounter">
+<button class="action-item" [disabled]="limit < clickCounter" (click)="click()">
 	{{ name }}
 	<span>{{ limit }}</span>
 </button>

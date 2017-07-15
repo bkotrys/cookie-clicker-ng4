@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { ClickService } from '../services/click.service';
 
 @Component({
   selector: 'app-store',
@@ -8,10 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StoreComponent implements OnInit {
   public items = [
-  	{ name: "cursor", limit: 10 },
-  	{ name: "grandma", limit: 200 }
-  ]		
-  public clickCounter: number = 11;
-  ngOnInit() {}
+  	{ name: "cursor", price: 10 },
+  	{ name: "grandma", price: 30 }
+  ]
+  
+  private canBuyNewClicker: boolean = false;
 
+  constructor(@Inject(ClickService) private service: ClickService ) {
+    this.service.CanBuyNewClicker.subscribe((can) => {
+      this.canBuyNewClicker = can;
+    });
+  }
+
+  ngOnInit() {
+  }
+
+  buy($event) {
+    if(this.canBuyNewClicker) {
+      const price = this.items.find(i => i.name === $event).price;
+      this.service.buyFor(price);
+    }
+  }
 }

@@ -16,6 +16,10 @@ export class ClickService  {
         this._clicks.next(1);
     }
 
+    public buyFor(price: number): void {
+        this._clicks.next(-price);
+    }
+
     public get Clicks(): Observable<number> {
         return this._clicks;
     }
@@ -34,6 +38,10 @@ export class ClickService  {
         return Observable.interval(1000).withLatestFrom(last, (r, l) => l);
     }
 
+    public get CanBuyNewClicker(): Observable<boolean> {
+        return this.ClickedNumber.map(n => n > 10).distinct();
+    }
+
     public get PlayingSeconds(): Observable<number> {
         return this._seconds;
     }
@@ -49,7 +57,7 @@ export class ClickService  {
 
     constructor() {
         this.Clicks.scan((acc, curr, idx) => {
-            acc+=1;
+            acc+=curr;
             return acc;
         }).subscribe((allClicks) => {
             this._allClicks.next(allClicks);

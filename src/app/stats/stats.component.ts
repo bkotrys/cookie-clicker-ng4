@@ -14,6 +14,8 @@ export class StatsComponent {
 
     public clicksPerSecond: number;
 
+    public canBuyNewClicker: boolean;
+
     constructor(@Inject(ClickService) private clickService : ClickService) { 
 
         this.clickService.ClickedNumber.subscribe((cnt) => {
@@ -26,6 +28,10 @@ export class StatsComponent {
 
         this.clickService.ClicksPerSecond.subscribe((cps) => {
             this.clicksPerSecond = cps;
+        });
+
+        this.clickService.CanBuyNewClicker.subscribe((can) => {
+            this.canBuyNewClicker = can;
         })
     }
 }
