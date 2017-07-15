@@ -12,6 +12,8 @@ export class StatsComponent {
 
     public playingTime: string;
 
+    public clicksPerSecond: number;
+
     constructor(@Inject(ClickService) private clickService : ClickService) { 
 
         this.clickService.ClickedNumber.subscribe((cnt) => {
@@ -21,5 +23,9 @@ export class StatsComponent {
         this.clickService.PlayingMinutes.subscribe((time) => {
             this.playingTime = time;
         });
+
+        this.clickService.ClicksPerSecond.subscribe((cps) => {
+            this.clicksPerSecond = cps;
+        })
     }
 }
