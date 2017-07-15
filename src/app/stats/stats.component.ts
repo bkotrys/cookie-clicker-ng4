@@ -21,11 +21,5 @@ export class StatsComponent {
         this.clickService.PlayingMinutes.subscribe((time) => {
             this.playingTime = time;
         });
-
-        setInterval(() => {
-            this.clickService.registerClick();
-        }, 500);
     }
-
-
 }
