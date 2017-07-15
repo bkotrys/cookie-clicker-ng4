@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { ClickService}  from '../services/click.service';
 
 @Component({
   selector: 'app-cookie-container',
@@ -7,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CookieContainerComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _cliskService: ClickService) { }
 
   ngOnInit() {
       
+  }
+
+  sentCookieClickedEvent(event: object){
+    debugger;
+      this._cliskService.registerClick();
   }
 
 }
