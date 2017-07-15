@@ -9,6 +9,7 @@ import { ClickService } from './services/click.service';
 import { StoreComponent } from './store/store.component';
 import { BoardComponent } from './board/board.component';
 import { CiastkoComponent } from './ciastko/ciastko.component';
+import { ActionItemComponent } from './store/action-item/action-item.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { CiastkoComponent } from './ciastko/ciastko.component';
     CiastkoComponent,
     StoreComponent,
     BoardComponent,
+    ActionItemComponent,
   ],
   imports: [
     BrowserModule,
