@@ -25,10 +25,13 @@ export class ClickService  {
     }
 
     public get ClicksPerSecond(): Observable<number> {
-        const totalDelayed = this.ClickedNumber.delay(1000).startWith(0);
-        return Observable.combineLatest(this.ClickedNumber, totalDelayed, (t, td) => {
+        const totalDelayed2s = this.ClickedNumber.delay(2000).startWith(0);
+        const totalDelayed1s = this.ClickedNumber.delay(1000).startWith(0);
+        const last =  Observable.combineLatest(totalDelayed1s, totalDelayed2s, (t, td) => {
             return t - td;
         });
+
+        return Observable.interval(1000).withLatestFrom(last, (r, l) => l);
     }
 
     public get PlayingSeconds(): Observable<number> {
