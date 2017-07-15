@@ -10,18 +10,25 @@ import { ClickService } from '../services/click.service';
 export class StoreComponent implements OnInit {
   public items = [
   	{ name: "cursor", price: 10 },
-  	{ name: "grandma", price: 30 }
+  	{ name: "grandma", price: 30 },
+  	{ name: "farm", price: 60 },
+  	{ name: "mine", price: 100 }
   ]
   
   private canBuyNewClicker: boolean = false;
+  private clickCounter: number = 0;
 
   constructor(@Inject(ClickService) private service: ClickService ) {
-    this.service.CanBuyNewClicker.subscribe((can) => {
-      this.canBuyNewClicker = can;
-    });
+
   }
 
   ngOnInit() {
+    this.service.CanBuyNewClicker.subscribe((can) => {
+    	this.canBuyNewClicker = can;
+    });
+    this.service.ClickedNumber.subscribe(counter => {
+    	this.clickCounter = counter;
+    });
   }
 
   buy($event) {

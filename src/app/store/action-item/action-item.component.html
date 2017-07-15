@@ -1,4 +1,8 @@
-<button class="action-item" [disabled]="limit < clickCounter" (click)="click()">
-	{{ name }}
-	<span>{{ limit }}</span>
+<button class="action-item" [disabled]="price > clickCounter" (click)="click()">
+	<div>
+		<b>{{ name }}</b>
+		<span class="count">{{ actionCount }}</span>
+	</div>
+	<span class="price">Price: {{ price }}</span>
+	
 </button>
