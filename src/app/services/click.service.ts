@@ -39,7 +39,7 @@ export class ClickService  {
     }
 
     public get CanBuyNewClicker(): Observable<boolean> {
-        return this.ClickedNumber.map(n => n > 10).distinct();
+        return this.ClickedNumber.map(n => n > 10).distinctUntilChanged();
     }
 
     public get PlayingSeconds(): Observable<number> {
