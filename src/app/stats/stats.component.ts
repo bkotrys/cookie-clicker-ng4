@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { ClickService } from './click.service';
+import { ClickService } from '../services/click.service';
 
 @Component({
     selector: 'stats',
